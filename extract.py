@@ -7,7 +7,7 @@ with open('hello.txt', newline='') as csvfile:
     for lines in spamreader:
 
         mo = regexforemail.search(str(lines))
-        email = re.sub('.*match=', "", str(mo))
+        email =  str(mo)
         if (email!="None"):
             email = re.sub('.*match=', "", str(mo))
             email = re.sub('\'t', "", email)
