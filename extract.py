@@ -2,9 +2,9 @@ import re
 import csv
 
 with open('hello.txt', newline='') as csvfile: #opening the file with text as a csvfile
-    spamreader = csv.reader(csvfile, delimiter='\n')
+    filereader = csv.reader(csvfile, delimiter='\n')
     regexforemail = re.compile(r'([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)') #regex to catch all the emails
-    for lines in spamreader:
+    for lines in filereader:
 
         mo = regexforemail.search(str(lines))
         email =  str(mo)
@@ -17,5 +17,5 @@ with open('hello.txt', newline='') as csvfile: #opening the file with text as a 
             f.write(email+"\n") #appending all the emails
 
         print(str(mo))
-    
+
 
